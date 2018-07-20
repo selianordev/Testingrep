@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>props type basic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+    <div id="site">
+        <!-- project content will go here -->
+        <num></num>
+    </div>
+
+    <!-- javaScript goes here -->
+    <script src="js/vue.js"></script>
+    <script>
+        // create component objeect
+        let Num = {
+            // add props or create props
+            props:{
+
+                numbers:{
+
+                    type: Array,
+                    default(){
+
+                        // add your own step here 
+                        return[]
+                    }
+                }
+            },
+            template: `
+                <p>{{ added}}</p>
+            `,
+            computed: {
+                added(){
+                    return this.numbers.reduce((a,b)=>a + b,0)
+                }
+            }
+        }
+        // Vue Object  Root start here
+        let sites = new Vue({
+            el: '#site',
+
+            // component global will go here (Rooter folder of the project)
+            components: {
+                'num':Num
+            }
+        })
+    </script>
+</body>
+<style>
+    /* internal style goes here */
+</style>
+</html>

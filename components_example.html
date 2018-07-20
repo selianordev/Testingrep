@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+<div id="app">
+     <top-header></top-header>
+</div>
+
+
+    <script src="js/vue.js">
+    </script>
+    <script>
+       // add component top-header
+       Vue.component('top-header',{
+           data(){
+               return{
+                   text: "Selianordev.com",
+                   form:{
+                   user: '',
+                   pswd: ''
+                   }
+                   
+               }
+              
+           },
+           //methods start here for login user
+           methods: {
+                   submit(){
+
+                       console.log(this.form);
+
+                   }
+            },
+           template: `
+                <div class="header">
+                    <header>{{text}}</header>
+                    <div class="login">
+                        <form class="user-login" action="#" @submit.prevent="submit">
+                           <div class="group">
+                                username <input type="text" :model="form.user" name="user"> <br />
+                           </div>
+                           
+                            <div class="group">
+                                    password <input type="text" :model="form.pswd" name="pswd"> <br >
+                            </div>
+                           
+                            <button>Login</button> <button>sing up</button>
+                        </form>
+                        {{form.user}}
+                        {{form.pswd}}
+                    </div>
+                </div>
+           `
+       })
+        // vue declaration start here
+        let app = new Vue({
+            el: '#app'
+        })
+    </script>
+    <style>
+        .login{
+            float: right;
+            margin-top: -20px;
+        }
+        .login > .user-login{
+            background: #dad762;
+            padding-bottom: 20px;
+            padding-top: 10px;
+        }
+        .group > input[type="text"]{
+            display: inline-block;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom:5px;
+        }
+    </style>
+</body>
+</html>

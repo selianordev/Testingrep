@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dynimic & Literal object in vue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+    <div id="web">
+        <!-- web app content will go heere -->
+        <message></message>
+    </div>
+    
+
+    <!-- javascript libraries start here -->
+    <script src="js/vue.js"></script>
+    <script>
+        // UPERCASE components
+        let uppcaseMessage = {
+            props: ['message'],
+
+            template: `
+                <p>{{uppcaseMessage}}</p>
+            `
+            ,
+            computed:{
+                uppcaseMessage(){
+                    return this.message.toUpperCase()
+                }
+            }
+        }
+        // components here
+        let lowcaseMessage = {
+           props: [
+               'message'
+           ],
+            template: `
+                <p>{{ lowcaseMessage}}</p>
+            `,
+            computed: {
+                lowcaseMessage (){
+                    return this.message.toLowerCase()
+                }
+            }
+        }
+        // component declaration start
+         let Message = {
+            //  import a lowcasemessage component here 
+            components:{
+                'lower-case-message':lowcaseMessage,
+                // register uppercase components
+                'upper-case-message':uppcaseMessage
+            },
+             data(){
+                 return{
+                     message: ''
+                 }
+             },
+             template : `
+                <div class="l_message">
+                 <input type="text" name="username" v-model="message">
+                 <lower-case-message :message="message"></lower-case-message>
+                 <upper-case-message :message="message"></upper-case-message>
+                </div>
+             `
+         }
+        // create vue object start
+        let web = new Vue({
+            el: '#web',
+            components: {
+                // components will go here
+                'message':Message
+            }
+        })
+    </script>
+</body>
+<style>
+    /* internal css goes here */
+</style>
+</html>

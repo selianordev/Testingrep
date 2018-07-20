@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>pros components </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+   <div id="apps">
+       <!-- apps content will go here -->
+       <posts></posts>
+   </div>
+   <!-- javascript library goes here -->
+    <script src="js/vue.js"></script>
+
+    <!-- inside javascript inline code -->
+   <script>
+       //contruct the component property here
+       let user = {
+           // user components goes here
+           props: [
+               'user'
+           ],
+           template: `
+           <div class="user">
+                    {{user.name}}
+            </div>
+           `
+       }
+       let post = {
+
+           //register the user component here
+
+           components: {
+               'user':user
+           },
+
+            props:[
+                'post'
+            ],
+           template: `
+           <div class="post">
+                <h1>{{post.title}}</h1>
+
+               <user :user="post.user"></user>
+            
+            </div>
+           `
+       }
+
+       let posts = {
+           components: {
+               'post': post
+           },
+           data(){
+               return{
+                   posts:[
+                       {id: 1, title: 'post one', user: {name:'Lusukama'}},
+                       {id: 2, title: 'post two', user:  {name: 'Selemani'}},
+                       {id: 3, title: 'post three',user:{name: 'Selianord'}}
+                   ]
+               }
+           },
+
+        template: `
+            <div class="posts">
+               <post v-for="post in posts" :post="post" :key="post.id"></post>
+            </div>
+        `
+        }
+       //declaration of vue main #apps goes here
+       let app =  new Vue({
+           el: '#apps',
+
+           //declaration of global components goes here
+            components:{
+                // all global component will go here
+
+                'posts': posts
+
+            }
+       })
+   </script> 
+</body>
+<style>
+
+</style>
+</html>

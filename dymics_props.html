@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dynamic Props</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+    <div id="mobil">
+        <!-- this is the root file for our mobil -->
+        <num :number="{ value:10}"></num>
+    </div>
+    <!-- javascript libraries -->
+   <script src="js/vue.js"></script> 
+   <script>
+
+       let Num = {
+           //create Props
+           props: [
+               'number'
+           ],
+           template:`<p>{{ number.value + 1 }}</p>`
+       }
+       // vue declaration goes here
+
+       let mobil = new Vue({
+           el:'#mobil',
+
+           components: {
+            //  assigme a  global component here 
+            'num': Num
+           }
+       })
+   </script>
+</body>
+<style>
+    /* internal css goes here for this page */
+</style>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>camel case</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+    <div id="mobiles">
+        <!-- webiste content or Apps contents  will go here -->
+        <upload upload-endpoint="upload.php"></upload>
+    </div>
+
+
+    <!--  javascript libraries go here -->
+    <script src="js/vue.js"></script>
+    <script>
+
+        //declaration of components here:
+
+        let Upload = {
+
+            props: [
+                'uploadEndpoint'
+            ],
+            template: `
+                <p>{{ uploadEndpoint }}</p>
+            `,
+            mounted () {
+                //  mounted the uploadEndpoint here for testing
+
+                console.log(this.uploadEndpoint);
+            }
+        }
+        //declaration of vue
+
+        let app = new Vue({
+            el:'#mobiles',
+            components: {
+                //global components 
+                'upload': Upload
+            }
+        })
+    </script>
+</body>
+<style>
+    /* all the style code goes here
+    @this is the single page server
+    @it was develop by lusukama 
+    */
+
+</style>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Multiple components</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+    <div id="app">
+        <!-- main application will go here -->
+        <post></post>
+
+    </div>
+<script src="js/vue.js"></script>
+
+<!-- inline javascript -->
+<script>
+//define the user components here
+ let User = {
+     data(){
+         return{
+             name: 'lusukama',
+             date: 'July 20 2018',
+             time: '23:45 PM'
+         }
+     },
+     template: `
+        <div class="user">{{name}}   {{date}}  {{time}}</div>
+     `
+ }
+
+
+ let Post = {
+     data(){
+         return{
+             title: 'Introduction'
+         }
+     },
+components:{
+    'user': User
+},
+     template: `
+        <div class="post">
+        <h1>{{title}}</h1>
+        <p>Selianordev is the  group of young self-made interpreneurs who enjoy coding , solving problems and meeting people. we specializing in web development and mobile Apps</p>
+        <user></user>
+        </div>
+     `
+ }
+
+// vue declaration 
+ let app = new Vue({
+     el: '#app',
+     components:{
+         'post' : Post
+     }
+ })
+</script>
+</body>
+</html>
