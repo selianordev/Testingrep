@@ -51,13 +51,8 @@ if(isset($_POST['submit'])) {
 	<meta name="keywords"> 
 	<link rel="shortcut icon" href="images/favicon.png">
 	<title> SELIANORDEV | PORTFOLIO</title>
-	<link rel="stylesheet" href="css/animate.css"/>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
-	<link rel="stylesheet" href="css/prettyPhoto.css">
-	<link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
 
 	<!--[if lt IE9]>
 	    <script src="js/respond.min.js"></script>
