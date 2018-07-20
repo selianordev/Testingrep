@@ -1,10 +1,10 @@
 # this is tutorial for vuejs 
 
 
-Basic Vue js components
+Basic Vue js components && Beginners Vuejs 
 
 
-what you need in order to start working Vuejs
+what you need to know in order to start working in Vuejs
 
 Basic knowledge of JavaScript 
 Basic knowledge of HTML 
