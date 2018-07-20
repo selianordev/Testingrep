@@ -25,24 +25,7 @@ if(isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<!--Global site tag(gtag.js)- Google Analytics-->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112914824-1"></script>
-	<script>
-		window.dataLayer=window.dataLayer||[];
-		function gtag(){dataLayer.pish(arguments);}
-		gtag('js' new Date());
-		gtag('config', 'UA-112914824-1');
-	</script>
-	<!--end of google analytics--->
 	
-	<!--- google tag manger-->
-		<script>
-			(function(w,d,s,l,i){w[l]||[];w[l].push({'gtm.start':new Date().getTime(), event: 'gtm.js}'); var f=d.getElementsByTagName(s)[0],
-			j=d.createElement(s), dl=l!= 'dataLayer '?' &l=' +l: ' ' ; j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id= 'i+dl;f.parentNode.insertBefore(j,f);
-			})(window,document, 'script','dataLayer0','GTM-5F8BQMQ');
-		</script>
-		
-	<!--end of tag manger-->
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content ="IE=edge" />
 	<meta charset='utf-8' />
@@ -81,11 +64,7 @@ if(isset($_POST['submit'])) {
 </head>
 <body id="home" data-spy="scroll" data-target="#scrollSpy" data-offset="85">
 
-	<!--google tag manager-->
-		<noscript>
-			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5F8BQMQ" height="0" width="0" style="display:none; visibility:hidden;"</iframe></noscript>
-	<!--end of google tag manager-->
-	<!-- Page header - company logo and main navigation menu -->
+	
 	<div class="navbar navbar-default navbar-fixed-top" id="scrollSpy">
 		<div class="container">
 			<div class="navbar-header">
@@ -397,56 +376,5 @@ I have experience with responsive web development and ability to produce complex
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/mainScript.js"></script>
-<script src="js/custom_validation.js"></script>
-<script src="js/jquery-prettyPhoto.js"></script>
-<!-- Bootstrap Dropdown Hover JS -->
-<script src="js/bootstrap-dropdownhover.min.js"></script>
 
-<script>
-    $(document).ready(function(){
-      $("#, #").hover(function(){
-          $(this).addClass("animated").addClass("zoomIn", "1000");
-      },
-      function(){
-        $(this).removeClass("animated").removeClass("zoomIn","1000");
-      });
-	  
-	  /*---hide and show function-*/
-    $("#hide").click(function(){
-        $("#hobby").hide();
-    });
-    $("#show").click(function(){
-        $("#hobby").show();
-    });
-	 
-
-
-	/*-----hide portfolio text-*/
-	
-	
-	
-    $("p").click(function(){
-    $(this).hide();
-	});
-
-	/*---slideup home-banner text--*/
-	
-	
-    });
-  </script>
-
-<?php if($_POST && $suspect || ($_POST && isset($errors['mailfail']))) : ?>
-	<script>
-		$(document).ready(function(){
-			$('#name').focus();
-		})
-	</script>
-<?php elseif ($missing || $errors) : ?>
-	<script>
-		$(document).ready(function(){
-			$('#name').focus();
-		})
-	</script>
-<?php endif;?>
-</body>
 </html>
