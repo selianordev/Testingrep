@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Basic Loop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+    <div id="lusu">
+        <!-- lusu app content will go here -->
+
+        <template v-if="loaded">
+                <div class="post" v-for="post, index in posts">
+                        <h1>{{ post.title }} (#{{index + 1}})</h1>
+                        <p>{{post.msg}}</p>
+                </div>
+        </template>
+        <template v-else>
+            loading...
+        </template>
+       
+    </div>
+    <!-- JavaScript library will go here -->
+    <script src="js/vue.js"></script>
+
+    <script>
+        // create vue instant object
+
+        let lusu = new Vue ({
+
+            el:'#lusu',
+
+            data:{
+
+                loaded:null,
+                posts: null
+
+
+            },
+
+            mounted(){
+
+                // call Ajax here
+
+                setInterval(()=>{
+
+                    this.loaded = true
+
+                    this.posts= [
+                    {id:1, title:'Introduction to web', msg:'we are the best at what we do everytime and we believe in it'},
+                    {id:2, title:'Selianordev Group', msg:'we are the best at what we do everytime and we believe in it'},
+                    {id:3, title:'about selianord', msg:'we are the best at what we do everytime and we believe in it'}
+                ]
+
+                }, 1000)
+
+                
+            }
+        })
+    </script>
+</body>
+<style>
+    /* internal css will go here */
+</style>
+</html>

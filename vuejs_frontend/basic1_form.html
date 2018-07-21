@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+    <div id="s_form">
+        <!-- s_form apps will go here -->
+
+        <h1>Registration form</h1>
+
+        <form action="#" @submit.prevent="submit">
+            <div class="s_form">
+                <label for="name">usename:</label>
+                <input type="text" id="name" v-model="form.name">
+            </div>
+            <br />
+            <div class="s_form">
+                <label for="email">email:</label>
+                <input type="text" id="email" v-model="form.email" placeholder="example@gmail.com">
+            </div>
+            <br />
+            <div class="s_form">
+                <label for="pswd">Password:</label>
+                <input type="password" id="pswd" v-model="form.password">
+            </div>
+            <br />
+            <div class="s_form">
+                <input type="radio" id="gender" value="M" v-model="form.gender"> Male
+                <input type="radio" id="gender" value="F" v-model="form.gender"> Female
+            </div>
+            <div class="s_form">
+                <input type="checkbox" id="choice" value="html" v-model="form.choice"> HTML
+                <!-- Autoplay is {{ form.autoplay === true ? 'enable': 'disabled'}} -->
+                <!-- <span v-if="form.autoplay === true">
+                    is enable
+                </span>
+                <span v-else>
+                    is desabled
+                </span> -->
+            </div>
+            <div class="s_form">
+                <input type="checkbox" id="choice"  value="css" v-model="form.choice"> CSS
+            </div>
+            <div class="s_form">
+                <input type="checkbox" id="choice"  value="javaScript" v-model="form.choice"> JavaScript
+            </div>
+            <div class="s_form">
+                <select  id="" v-model="form.choose">
+                    <option value=''>please choose one</option>
+                    <option value="JHB">Johannesburg</option>
+                    <option value="CPT">Cape Town</option>
+                    <option value="DBN">Durban</option>
+                </select>
+            </div>
+            <br/>
+            <div class="s_form">
+                <textarea  id="msg" :class="msgClass" cols="30" rows="10"  v-model.trim="form.msg" placeholder="Leave your message here"></textarea>
+                <!-- <p>{{ form.msg.length }} out of {{ max }} caracters used !!!</p>
+                <span v-if="form.msg.length > max">
+                    your message is too much
+                </span> -->
+            </div>
+            <button>Register</button>
+        </form>
+    </div>
+
+    <!-- javaScript library will go here  -->
+    <script src="js/vue.js"></script>
+    <script src="js/axios.min.js"></script>
+
+    <script>
+        // create vue js instance global object
+
+        let s_form = new Vue({
+
+            el: '#s_form',
+
+            data:{
+
+                max: 140,
+
+                form:{
+
+                    name: '',
+                    email:'',
+                    pswd:'',
+                    gender: '',
+                    choice: false,
+                    choose:'',
+                    msg: '',
+                    choice:[]
+
+                }
+            },
+            
+            // methods
+
+            methods: {
+               
+               submit(){
+
+                //    ajax
+
+                console.log(this.form)
+
+                // axios.post('http://staging.tangent.tngnt.co/api-token-auth/', this.form)
+               }
+            },
+
+            computed: {
+
+                msgClass(){
+
+                    return{
+                    warning: this.form.msg.length > 120,
+                    danger: this.form.msg.length > 140
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+<style>
+    /* internal css will go here */
+    div{
+        white-space: pre-line;
+    }
+    .warning{
+        color: orange;
+    }.danger{
+        color: red;
+    }
+</style>
+</html>

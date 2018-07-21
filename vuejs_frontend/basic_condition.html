@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic Condition</title>
+</head>
+<body>
+    <div id="basic">
+        <!-- all content aof basic condition will go here -->
+        <div v-if="loaded">
+            {{ message }}
+        </div>
+    </div>
+
+    <!-- JavaScript library will go here -->
+    <script src="js/vue.js"></script>
+    <script>
+        let basic = new Vue({
+            el: '#basic',
+            data:{
+                loaded: false,
+                message:'Hello Lusukama !'
+            }
+        })
+    </script>
+</body>
+<style>
+    /* internal css goes here */
+</style>
+</html>

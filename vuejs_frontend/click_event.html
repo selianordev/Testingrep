@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Click Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+    <div id="solitha">
+        <!-- solitha Apps will go here -->
+        <a href="#" v-on:click="clicked = true">Click me</a>
+        <template v-if="clicked">
+            clicked
+        </template>
+    </div>
+
+    <!-- javaScript library will go here -->
+
+    <script src="js/vue.js"></script>
+
+    <script>
+        // create vue object here
+
+        let solitha = new Vue({
+
+            el: '#solitha',
+
+            data:{
+
+                clicked: false
+                
+            }
+        })
+    </script>
+</body>
+<style>
+    /* internal css will go here */
+</style>
+</html>

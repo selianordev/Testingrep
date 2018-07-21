@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>More Condition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+    <div id="more">
+        <!-- more app will go here -->
+        {{ counter }}  is 
+
+        <span v-if="counter < 5 ">
+            too low
+        </span>
+
+        <span v-else-if="counter >=5 && counter < 10">
+            it just right
+        </span>
+
+        <span v-else>
+            too high
+        </span>
+    </div>
+    <!-- javaScript library will be going here -->
+    <script src="js/vue.js"></script>
+    <script>
+        // create vue object instant here
+
+        let more = new Vue({
+            el: '#more',
+
+            data:{
+
+                counter:1
+            },
+
+            mounted() {
+
+                setInterval(()=>{
+
+                    this.counter = Math.floor(Math.random() * (20-1) + 1)
+
+                }, 1000)
+
+            }
+        })
+    </script>
+</body>
+<style>
+    /* internal css goes here */
+</style>
+</html>

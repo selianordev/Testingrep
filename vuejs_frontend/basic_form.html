@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Basic Form Example </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+    <div id="test">
+        <!-- test apps will go here  -->
+        <form action="#" @submit.prevent="submit">
+            <div class="s_form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" v-model="name">
+            </div>
+            <div class="s_form">
+                <label for="pswd">Password:</label>
+                <input type="password" id="pswd" v-model="pswd">
+            </div>
+            <button>Send</button>
+        </form>
+
+        {{ greetings }}
+        {{ code }}
+    </div>
+
+    <!-- javaScript library will go here  -->
+
+    <script src="js/vue.js"></script>
+
+    <script>
+        // create vue instance global here 
+
+        let test = new Vue({
+
+            el: '#test',
+
+            data:{
+
+                // data element will go here
+
+                name:'',
+                pswd:'',
+                greetings:'',
+                code:''
+            },
+            methods: {
+
+                submit(){
+                    this.greetings = `Your Name is  ${this.name} `
+                    this.code = `Your Password is ${this.pswd}`
+                }
+            }
+        })
+    </script>
+</body>
+<style>
+    /* internal css will go here */
+</style>
+</html>
